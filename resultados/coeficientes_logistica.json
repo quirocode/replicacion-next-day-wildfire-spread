@@ -1,0 +1,102 @@
+[
+  {
+    "variable": "PrevFireMask",
+    "posicion": 1,
+    "coeficiente": 1.3709111213684082
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 9,
+    "coeficiente": 1.290955662727356
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 3,
+    "coeficiente": 1.0345875024795532
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 7,
+    "coeficiente": 1.0087941884994507
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 4,
+    "coeficiente": 0.8447940349578857
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 6,
+    "coeficiente": 0.7981134653091431
+  },
+  {
+    "variable": "erc",
+    "posicion": 9,
+    "coeficiente": 0.29048609733581543
+  },
+  {
+    "variable": "erc",
+    "posicion": 1,
+    "coeficiente": -0.2305263876914978
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 5,
+    "coeficiente": 0.2201966941356659
+  },
+  {
+    "variable": "vs",
+    "posicion": 9,
+    "coeficiente": 0.1950189769268036
+  },
+  {
+    "variable": "elevation",
+    "posicion": 9,
+    "coeficiente": -0.17724083364009857
+  },
+  {
+    "variable": "erc",
+    "posicion": 8,
+    "coeficiente": 0.17464177310466766
+  },
+  {
+    "variable": "elevation",
+    "posicion": 4,
+    "coeficiente": 0.17429250478744507
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 8,
+    "coeficiente": 0.16933108866214752
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 2,
+    "coeficiente": 0.1552993357181549
+  },
+  {
+    "variable": "tmmn",
+    "posicion": 9,
+    "coeficiente": 0.14722402393817902
+  },
+  {
+    "variable": "erc",
+    "posicion": 6,
+    "coeficiente": 0.13506059348583221
+  },
+  {
+    "variable": "tmmx",
+    "posicion": 7,
+    "coeficiente": -0.1348818689584732
+  },
+  {
+    "variable": "erc",
+    "posicion": 2,
+    "coeficiente": -0.13238239288330078
+  },
+  {
+    "variable": "tmmx",
+    "posicion": 8,
+    "coeficiente": -0.12273939698934555
+  }
+]

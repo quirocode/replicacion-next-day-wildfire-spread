@@ -1,0 +1,93 @@
+{
+  "muestras": {
+    "train": 14979,
+    "eval": 1877,
+    "test": 1689
+  },
+  "total": 18545,
+  "fuego_crece": 10798,
+  "fuego_decrece": 7191,
+  "fuego_igual": 556,
+  "muestras_sin_fuego_previo": 0,
+  "nan": 0,
+  "fraccion_etiquetas": {
+    "-1": 0.023948859088534644,
+    "0": 0.9649243447105015,
+    "1": 0.011126796200963872
+  },
+  "fraccion_centro_con_fuego": 0.32839040172553247,
+  "estadisticas_train": {
+    "elevation": {
+      "min": -45.0,
+      "max": 4203.0,
+      "media_recortada": 895.2701171940196,
+      "desv_recortada": 838.8517448661178
+    },
+    "pdsi": {
+      "min": -152.90792846679688,
+      "max": 80.9964828491211,
+      "media_recortada": -0.7726061974072472,
+      "desv_recortada": 2.4391103464166934
+    },
+    "NDVI": {
+      "min": -9567.0,
+      "max": 9966.0,
+      "media_recortada": 5350.680987611171,
+      "desv_recortada": 2185.2185657309938
+    },
+    "pr": {
+      "min": -167.44830322265625,
+      "max": 136.81561279296875,
+      "media_recortada": 0.3245614927814755,
+      "desv_recortada": 1.532237264289571
+    },
+    "sph": {
+      "min": -0.1289878934621811,
+      "max": 0.08553028106689453,
+      "media_recortada": 0.006526340216834533,
+      "desv_recortada": 0.003735403023668602
+    },
+    "th": {
+      "min": -505870.0625,
+      "max": 37735.62890625,
+      "media_recortada": 199.42552351270518,
+      "desv_recortada": 71.58464732200085
+    },
+    "tmmn": {
+      "min": -444.6930236816406,
+      "max": 716.6276245117188,
+      "media_recortada": 282.7719359726532,
+      "desv_recortada": 7.41934341356128
+    },
+    "tmmx": {
+      "min": 0.0,
+      "max": 1229.8487548828125,
+      "media_recortada": 298.63355295548365,
+      "desv_recortada": 7.885339294898332
+    },
+    "vs": {
+      "min": -82.6530990600586,
+      "max": 103.22010040283203,
+      "media_recortada": 3.627238679558525,
+      "desv_recortada": 1.3037353492003343
+    },
+    "erc": {
+      "min": -1196.088623046875,
+      "max": 2470.88232421875,
+      "media_recortada": 53.45700127325667,
+      "desv_recortada": 25.05937294304183
+    },
+    "population": {
+      "min": 0.0,
+      "max": 27103.60546875,
+      "media_recortada": 28.842230375658705,
+      "desv_recortada": 182.59905005076553
+    },
+    "PrevFireMask": {
+      "min": -1.0,
+      "max": 1.0,
+      "media_recortada": -0.0027228549657019826,
+      "desv_recortada": 0.13831191558360625
+    }
+  }
+}

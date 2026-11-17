@@ -1,0 +1,37 @@
+{
+  "1x": {
+    "auc_pr": 11.549600958824158,
+    "precision": 35.71949874998059,
+    "recall": 27.277039285671933,
+    "pixeles_validos": 6727699,
+    "pixeles_con_fuego": 84331
+  },
+  "2x": {
+    "auc_pr": 19.54853981733322,
+    "precision": 45.639692341024805,
+    "recall": 36.82585006264386,
+    "pixeles_validos": 1690759,
+    "pixeles_con_fuego": 34321
+  },
+  "4x": {
+    "auc_pr": 30.60542345046997,
+    "precision": 56.02422988845387,
+    "recall": 46.837944664031625,
+    "pixeles_validos": 424817,
+    "pixeles_con_fuego": 16192
+  },
+  "8x": {
+    "auc_pr": 41.306886076927185,
+    "precision": 63.953332439318764,
+    "recall": 52.516242704547956,
+    "pixeles_validos": 106721,
+    "pixeles_con_fuego": 9081
+  },
+  "recortes_32": {
+    "auc_pr": 14.285528659820557,
+    "precision": 40.071935616568396,
+    "recall": 26.4264995374267,
+    "pixeles_validos": 5045898,
+    "pixeles_con_fuego": 143761
+  }
+}

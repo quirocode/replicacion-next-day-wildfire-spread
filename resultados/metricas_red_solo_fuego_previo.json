@@ -1,0 +1,22 @@
+{
+  "recortes_32": {
+    "auc_pr": 21.342670917510986,
+    "precision": 25.777170801691256,
+    "recall": 51.991847580359064,
+    "pixeles_validos": 5045898,
+    "pixeles_con_fuego": 143761,
+    "auc_pr_por_repeticion": [
+      21.169836819171906,
+      21.30015939474106,
+      21.586737036705017
+    ],
+    "auc_pr_desviacion": 0.17413803910045242
+  },
+  "completo_64": {
+    "auc_pr": 18.875569105148315,
+    "precision": 21.12857965843415,
+    "recall": 53.927974291778824,
+    "pixeles_validos": 6727699,
+    "pixeles_con_fuego": 84331
+  }
+}

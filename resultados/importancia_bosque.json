@@ -1,0 +1,542 @@
+[
+  {
+    "variable": "PrevFireMask",
+    "posicion": 1,
+    "importancia": 0.08071830374315903
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 4,
+    "importancia": 0.07923807534289697
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 5,
+    "importancia": 0.07870005475919
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 7,
+    "importancia": 0.06832913877367416
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 8,
+    "importancia": 0.06675922712819031
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 9,
+    "importancia": 0.06645926820635298
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 2,
+    "importancia": 0.06442594318659817
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 3,
+    "importancia": 0.06021189672402332
+  },
+  {
+    "variable": "PrevFireMask",
+    "posicion": 6,
+    "importancia": 0.054981767578744435
+  },
+  {
+    "variable": "erc",
+    "posicion": 9,
+    "importancia": 0.01194156411990314
+  },
+  {
+    "variable": "erc",
+    "posicion": 6,
+    "importancia": 0.010362152659353733
+  },
+  {
+    "variable": "erc",
+    "posicion": 8,
+    "importancia": 0.009674635521741241
+  },
+  {
+    "variable": "erc",
+    "posicion": 7,
+    "importancia": 0.009341873126293013
+  },
+  {
+    "variable": "erc",
+    "posicion": 1,
+    "importancia": 0.007829443077198203
+  },
+  {
+    "variable": "erc",
+    "posicion": 2,
+    "importancia": 0.00759651353019469
+  },
+  {
+    "variable": "erc",
+    "posicion": 4,
+    "importancia": 0.007160437151241351
+  },
+  {
+    "variable": "erc",
+    "posicion": 3,
+    "importancia": 0.006854867831348326
+  },
+  {
+    "variable": "erc",
+    "posicion": 5,
+    "importancia": 0.006389899721763895
+  },
+  {
+    "variable": "elevation",
+    "posicion": 5,
+    "importancia": 0.005464630081539281
+  },
+  {
+    "variable": "th",
+    "posicion": 2,
+    "importancia": 0.005322844622597493
+  },
+  {
+    "variable": "elevation",
+    "posicion": 7,
+    "importancia": 0.005218225134777875
+  },
+  {
+    "variable": "elevation",
+    "posicion": 4,
+    "importancia": 0.004824520072396563
+  },
+  {
+    "variable": "elevation",
+    "posicion": 8,
+    "importancia": 0.004715579146270149
+  },
+  {
+    "variable": "th",
+    "posicion": 7,
+    "importancia": 0.004680801961923646
+  },
+  {
+    "variable": "th",
+    "posicion": 9,
+    "importancia": 0.0046491625431623424
+  },
+  {
+    "variable": "th",
+    "posicion": 3,
+    "importancia": 0.00454605847835994
+  },
+  {
+    "variable": "th",
+    "posicion": 4,
+    "importancia": 0.0045022676679231455
+  },
+  {
+    "variable": "th",
+    "posicion": 1,
+    "importancia": 0.0044619374832530955
+  },
+  {
+    "variable": "tmmn",
+    "posicion": 3,
+    "importancia": 0.004448101794939441
+  },
+  {
+    "variable": "elevation",
+    "posicion": 1,
+    "importancia": 0.004392051124493537
+  },
+  {
+    "variable": "tmmn",
+    "posicion": 9,
+    "importancia": 0.004374402162618457
+  },
+  {
+    "variable": "th",
+    "posicion": 8,
+    "importancia": 0.0043488069677426865
+  },
+  {
+    "variable": "vs",
+    "posicion": 2,
+    "importancia": 0.0043239291401553715
+  },
+  {
+    "variable": "tmmn",
+    "posicion": 8,
+    "importancia": 0.004295431636986705
+  },
+  {
+    "variable": "th",
+    "posicion": 5,
+    "importancia": 0.004162346795451438
+  },
+  {
+    "variable": "vs",
+    "posicion": 6,
+    "importancia": 0.0041013559723734145
+  },
+  {
+    "variable": "sph",
+    "posicion": 5,
+    "importancia": 0.004093360525706251
+  },
+  {
+    "variable": "th",
+    "posicion": 6,
+    "importancia": 0.004083538782019359
+  },
+  {
+    "variable": "vs",
+    "posicion": 9,
+    "importancia": 0.004050619137307236
+  },
+  {
+    "variable": "vs",
+    "posicion": 8,
+    "importancia": 0.004050573158786235
+  },
+  {
+    "variable": "tmmn",
+    "posicion": 5,
+    "importancia": 0.0040380827356936745
+  },
+  {
+    "variable": "sph",
+    "posicion": 3,
+    "importancia": 0.004006785068915771
+  },
+  {
+    "variable": "sph",
+    "posicion": 8,
+    "importancia": 0.003997949366908017
+  },
+  {
+    "variable": "tmmn",
+    "posicion": 6,
+    "importancia": 0.003983431093936521
+  },
+  {
+    "variable": "sph",
+    "posicion": 6,
+    "importancia": 0.003947349588727669
+  },
+  {
+    "variable": "sph",
+    "posicion": 2,
+    "importancia": 0.0039467545113959415
+  },
+  {
+    "variable": "sph",
+    "posicion": 9,
+    "importancia": 0.003944692972495097
+  },
+  {
+    "variable": "NDVI",
+    "posicion": 4,
+    "importancia": 0.003921311219317321
+  },
+  {
+    "variable": "sph",
+    "posicion": 1,
+    "importancia": 0.0039017574470473246
+  },
+  {
+    "variable": "vs",
+    "posicion": 5,
+    "importancia": 0.003893076277589677
+  },
+  {
+    "variable": "vs",
+    "posicion": 7,
+    "importancia": 0.003803393045066808
+  },
+  {
+    "variable": "elevation",
+    "posicion": 9,
+    "importancia": 0.0037813213114103205
+  },
+  {
+    "variable": "pdsi",
+    "posicion": 1,
+    "importancia": 0.0037705591983703646
+  },
+  {
+    "variable": "tmmn",
+    "posicion": 7,
+    "importancia": 0.0037583750180230574
+  },
+  {
+    "variable": "pdsi",
+    "posicion": 7,
+    "importancia": 0.003757936192693449
+  },
+  {
+    "variable": "vs",
+    "posicion": 1,
+    "importancia": 0.0037503427132881684
+  },
+  {
+    "variable": "NDVI",
+    "posicion": 1,
+    "importancia": 0.0037490893338377076
+  },
+  {
+    "variable": "tmmn",
+    "posicion": 1,
+    "importancia": 0.0037049135439271336
+  },
+  {
+    "variable": "vs",
+    "posicion": 4,
+    "importancia": 0.0036665916594282276
+  },
+  {
+    "variable": "pdsi",
+    "posicion": 5,
+    "importancia": 0.003645000370956346
+  },
+  {
+    "variable": "elevation",
+    "posicion": 2,
+    "importancia": 0.0036360852084702487
+  },
+  {
+    "variable": "sph",
+    "posicion": 7,
+    "importancia": 0.0036339413111358097
+  },
+  {
+    "variable": "NDVI",
+    "posicion": 2,
+    "importancia": 0.003617937635125613
+  },
+  {
+    "variable": "pdsi",
+    "posicion": 6,
+    "importancia": 0.003569031740385264
+  },
+  {
+    "variable": "tmmn",
+    "posicion": 4,
+    "importancia": 0.0035483858595349426
+  },
+  {
+    "variable": "NDVI",
+    "posicion": 5,
+    "importancia": 0.003533821596344552
+  },
+  {
+    "variable": "pdsi",
+    "posicion": 9,
+    "importancia": 0.0035279828706815857
+  },
+  {
+    "variable": "pdsi",
+    "posicion": 8,
+    "importancia": 0.003527776918631683
+  },
+  {
+    "variable": "tmmx",
+    "posicion": 9,
+    "importancia": 0.0035034759965829284
+  },
+  {
+    "variable": "vs",
+    "posicion": 3,
+    "importancia": 0.003491085070489157
+  },
+  {
+    "variable": "elevation",
+    "posicion": 6,
+    "importancia": 0.003486985367843754
+  },
+  {
+    "variable": "elevation",
+    "posicion": 3,
+    "importancia": 0.0034761542900896753
+  },
+  {
+    "variable": "sph",
+    "posicion": 4,
+    "importancia": 0.0034711217267050874
+  },
+  {
+    "variable": "pdsi",
+    "posicion": 4,
+    "importancia": 0.0034699820689174116
+  },
+  {
+    "variable": "NDVI",
+    "posicion": 7,
+    "importancia": 0.0034357089027737112
+  },
+  {
+    "variable": "NDVI",
+    "posicion": 3,
+    "importancia": 0.0033989585802528107
+  },
+  {
+    "variable": "pdsi",
+    "posicion": 2,
+    "importancia": 0.0033609839704523063
+  },
+  {
+    "variable": "tmmx",
+    "posicion": 7,
+    "importancia": 0.003323361700637325
+  },
+  {
+    "variable": "tmmx",
+    "posicion": 1,
+    "importancia": 0.0033156213489935714
+  },
+  {
+    "variable": "tmmx",
+    "posicion": 8,
+    "importancia": 0.0033031262591848498
+  },
+  {
+    "variable": "pdsi",
+    "posicion": 3,
+    "importancia": 0.003288277359549301
+  },
+  {
+    "variable": "tmmn",
+    "posicion": 2,
+    "importancia": 0.003241948590903874
+  },
+  {
+    "variable": "NDVI",
+    "posicion": 9,
+    "importancia": 0.003218766996321018
+  },
+  {
+    "variable": "NDVI",
+    "posicion": 6,
+    "importancia": 0.003163986870838754
+  },
+  {
+    "variable": "tmmx",
+    "posicion": 4,
+    "importancia": 0.00315240112045466
+  },
+  {
+    "variable": "NDVI",
+    "posicion": 8,
+    "importancia": 0.0031046459649567847
+  },
+  {
+    "variable": "tmmx",
+    "posicion": 2,
+    "importancia": 0.0031012611378188363
+  },
+  {
+    "variable": "tmmx",
+    "posicion": 5,
+    "importancia": 0.0030871570329031365
+  },
+  {
+    "variable": "tmmx",
+    "posicion": 3,
+    "importancia": 0.0030675358687674995
+  },
+  {
+    "variable": "tmmx",
+    "posicion": 6,
+    "importancia": 0.002845316984533258
+  },
+  {
+    "variable": "population",
+    "posicion": 7,
+    "importancia": 0.0026983224469376583
+  },
+  {
+    "variable": "population",
+    "posicion": 5,
+    "importancia": 0.0025425688847320327
+  },
+  {
+    "variable": "population",
+    "posicion": 9,
+    "importancia": 0.0024789645593584716
+  },
+  {
+    "variable": "population",
+    "posicion": 8,
+    "importancia": 0.002475428252339191
+  },
+  {
+    "variable": "population",
+    "posicion": 1,
+    "importancia": 0.0022622784632531346
+  },
+  {
+    "variable": "population",
+    "posicion": 4,
+    "importancia": 0.0021467806002187367
+  },
+  {
+    "variable": "population",
+    "posicion": 6,
+    "importancia": 0.002140581954077847
+  },
+  {
+    "variable": "population",
+    "posicion": 3,
+    "importancia": 0.0019324039914176828
+  },
+  {
+    "variable": "population",
+    "posicion": 2,
+    "importancia": 0.0018596743336624624
+  },
+  {
+    "variable": "pr",
+    "posicion": 9,
+    "importancia": 0.0006509285408695439
+  },
+  {
+    "variable": "pr",
+    "posicion": 1,
+    "importancia": 0.0006415235306573211
+  },
+  {
+    "variable": "pr",
+    "posicion": 7,
+    "importancia": 0.0006245701104165557
+  },
+  {
+    "variable": "pr",
+    "posicion": 4,
+    "importancia": 0.0006081681245296527
+  },
+  {
+    "variable": "pr",
+    "posicion": 8,
+    "importancia": 0.0006076494913071689
+  },
+  {
+    "variable": "pr",
+    "posicion": 2,
+    "importancia": 0.0006040933070506357
+  },
+  {
+    "variable": "pr",
+    "posicion": 5,
+    "importancia": 0.0005952701300653741
+  },
+  {
+    "variable": "pr",
+    "posicion": 6,
+    "importancia": 0.0005896361047164391
+  },
+  {
+    "variable": "pr",
+    "posicion": 3,
+    "importancia": 0.0005840115824316762
+  }
+]

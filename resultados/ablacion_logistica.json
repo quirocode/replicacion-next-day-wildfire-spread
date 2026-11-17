@@ -1,0 +1,86 @@
+{
+  "elevation": {
+    "auc_pr": 19.879071414470673,
+    "precision": 36.44696841098131,
+    "recall": 28.42494192973799,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  },
+  "pdsi": {
+    "auc_pr": 19.78926658630371,
+    "precision": 36.605685954562574,
+    "recall": 28.079529179554452,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  },
+  "NDVI": {
+    "auc_pr": 19.911876320838928,
+    "precision": 36.61221645893009,
+    "recall": 28.458640734633946,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  },
+  "pr": {
+    "auc_pr": 19.908995926380157,
+    "precision": 36.31815149493602,
+    "recall": 28.829327588489452,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  },
+  "sph": {
+    "auc_pr": 19.941747188568115,
+    "precision": 36.45412801627169,
+    "recall": 28.473083079589358,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  },
+  "th": {
+    "auc_pr": 19.82319802045822,
+    "precision": 36.2122391659416,
+    "recall": 28.55131244809782,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  },
+  "tmmn": {
+    "auc_pr": 19.863903522491455,
+    "precision": 36.25231338679827,
+    "recall": 28.290146710154175,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  },
+  "tmmx": {
+    "auc_pr": 19.80765461921692,
+    "precision": 36.50843271800803,
+    "recall": 28.110820926957842,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  },
+  "vs": {
+    "auc_pr": 20.017527043819427,
+    "precision": 36.33452227365865,
+    "recall": 28.81127465729519,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  },
+  "erc": {
+    "auc_pr": 19.760969281196594,
+    "precision": 36.42330794476438,
+    "recall": 28.31662434257242,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  },
+  "population": {
+    "auc_pr": 19.887705147266388,
+    "precision": 36.43676928027459,
+    "recall": 28.618710057889736,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  },
+  "PrevFireMask": {
+    "auc_pr": 3.1172510236501694,
+    "precision": 0.0,
+    "recall": 0.0,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  }
+}

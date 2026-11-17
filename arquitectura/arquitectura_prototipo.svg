@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1580 918" width="1580" height="918" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="punta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#52514e"/>
+  </marker>
+</defs>
+<rect width="1580" height="918" fill="#fcfcfb"/>
+<text x="20" y="38" font-size="24" fill="#0b0b0b" font-weight="700" text-anchor="start">Arquitectura del prototipo de replicación</text>
+<text x="20" y="62" font-size="14.5" fill="#52514e" font-weight="400" text-anchor="start">Next Day Wildfire Spread (Huot et al., 2022) · de los datos de los autores a la comparación de resultados</text>
+<circle cx="34" cy="108" r="15" fill="#0b0b0b"/>
+<text x="34" y="113" font-size="15" fill="#ffffff" font-weight="700" text-anchor="middle">0</text>
+<text x="58" y="106" font-size="16" fill="#0b0b0b" font-weight="700" text-anchor="start">Origen de los datos</text>
+<text x="58" y="127" font-size="13" fill="#52514e" font-weight="400" text-anchor="start">hecho por los autores</text>
+<text x="58" y="146" font-size="13" fill="#52514e" font-weight="400" text-anchor="start" font-style="italic">Google Earth Engine</text>
+<rect x="290" y="86" width="500" height="92" rx="10" fill="#f1f0ec" stroke="#8a8983" stroke-width="1.6" stroke-dasharray="7 5"/>
+<text x="304" y="112" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Fuentes satelitales y climáticas (EE. UU., 2012–2020)</text>
+<text x="304" y="134" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">MODIS (fuego) · VIIRS (vegetación) · SRTM (elevación)</text>
+<text x="304" y="153" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">GRIDMET (clima, sequía, ERC) · GPWv4 (población)</text>
+<rect x="860" y="86" width="700" height="92" rx="10" fill="#f1f0ec" stroke="#8a8983" stroke-width="1.6"/>
+<text x="874" y="112" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Dataset público en Kaggle (se reutiliza tal cual)</text>
+<text x="874" y="134" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">18 545 muestras de 64 × 64 km · 12 capas de entrada + fuego de mañana</text>
+<text x="874" y="153" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">Ya separado en entrenamiento / validación / prueba (80 / 10 / 10)</text>
+<line x1="790" y1="132" x2="858" y2="132" stroke="#52514e" stroke-width="1.8" marker-end="url(#punta)"/>
+<circle cx="34" cy="238" r="15" fill="#0b0b0b"/>
+<text x="34" y="243" font-size="15" fill="#ffffff" font-weight="700" text-anchor="middle">1</text>
+<text x="58" y="236" font-size="16" fill="#0b0b0b" font-weight="700" text-anchor="start">Preparación de datos</text>
+<text x="58" y="257" font-size="13" fill="#52514e" font-weight="400" text-anchor="start">src/datos.py · paso1</text>
+<text x="58" y="276" font-size="13" fill="#52514e" font-weight="400" text-anchor="start" font-style="italic">TensorFlow (tf.data), NumPy</text>
+<rect x="290" y="216" width="302" height="92" rx="10" fill="#e6f0fb" stroke="#2a78d6" stroke-width="1.6"/>
+<text x="304" y="242" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Leer TFRecord</text>
+<text x="304" y="264" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">64 × 64 × 12 + etiqueta</text>
+<text x="304" y="283" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">explorar y verificar</text>
+<rect x="609" y="216" width="302" height="92" rx="10" fill="#e6f0fb" stroke="#2a78d6" stroke-width="1.6"/>
+<text x="623" y="242" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Aumentar</text>
+<text x="623" y="264" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">volteo y rotación al azar</text>
+<text x="623" y="283" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">(corrige dirección del viento)</text>
+<line x1="592" y1="262" x2="608" y2="262" stroke="#52514e" stroke-width="1.8" marker-end="url(#punta)"/>
+<rect x="928" y="216" width="302" height="92" rx="10" fill="#e6f0fb" stroke="#2a78d6" stroke-width="1.6"/>
+<text x="942" y="242" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Recortar 32 × 32 km</text>
+<text x="942" y="264" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">ventana al azar: mueve</text>
+<text x="942" y="283" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">el fuego de sitio</text>
+<line x1="911" y1="262" x2="927" y2="262" stroke="#52514e" stroke-width="1.8" marker-end="url(#punta)"/>
+<rect x="1247" y="216" width="302" height="92" rx="10" fill="#e6f0fb" stroke="#2a78d6" stroke-width="1.6"/>
+<text x="1261" y="242" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Limpiar y normalizar</text>
+<text x="1261" y="264" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">recorte de extremos</text>
+<text x="1261" y="283" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">(x − media) / desviación</text>
+<line x1="1230" y1="262" x2="1246" y2="262" stroke="#52514e" stroke-width="1.8" marker-end="url(#punta)"/>
+<path d="M 900 178 L 900 197 L 441 197" fill="none" stroke="#52514e" stroke-width="1.8"/>
+<line x1="441" y1="197" x2="441" y2="214" stroke="#52514e" stroke-width="1.8" marker-end="url(#punta)"/>
+<text x="930" y="202" font-size="12.5" fill="#52514e" font-weight="400" text-anchor="start" font-style="italic">Aumentar y recortar se aplican solo al entrenar la red</text>
+<circle cx="34" cy="372" r="15" fill="#0b0b0b"/>
+<text x="34" y="377" font-size="15" fill="#ffffff" font-weight="700" text-anchor="middle">2</text>
+<text x="58" y="370" font-size="16" fill="#0b0b0b" font-weight="700" text-anchor="start">Modelos</text>
+<text x="58" y="391" font-size="13" fill="#52514e" font-weight="400" text-anchor="start">src/modelo.py · paso2</text>
+<text x="58" y="410" font-size="13" fill="#52514e" font-weight="400" text-anchor="start" font-style="italic">Keras / TensorFlow</text>
+<text x="58" y="429" font-size="13" fill="#52514e" font-weight="400" text-anchor="start">src/modelos_base.py · paso3</text>
+<text x="58" y="448" font-size="13" fill="#52514e" font-weight="400" text-anchor="start" font-style="italic">Scikit-learn</text>
+<rect x="290" y="350" width="620" height="132" rx="10" fill="#fdebe3" stroke="#eb6834" stroke-width="1.6"/>
+<text x="304" y="376" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Red neuronal: autoencoder convolucional</text>
+<text x="304" y="398" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">Ve la imagen completa (segmentación): 46 480 parámetros</text>
+<text x="304" y="417" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">Pérdida: entropía cruzada con peso 3 para «fuego»</text>
+<text x="304" y="436" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">Adam, tasa 0,0001 · se guarda la mejor época según validación</text>
+<text x="304" y="455" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">Píxeles inciertos (nubes) fuera de la pérdida</text>
+<rect x="940" y="350" width="620" height="132" rx="10" fill="#fdebe3" stroke="#eb6834" stroke-width="1.6"/>
+<text x="954" y="376" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Modelos base (píxel a píxel, vecindad 3 × 3 = 108 columnas)</text>
+<text x="954" y="398" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">Persistencia: «mañana = hoy» (no aprende; es el piso)</text>
+<text x="954" y="417" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">Regresión logística: valores por defecto, W = 7</text>
+<text x="954" y="436" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">Random forest: profundidad 15, W = 5</text>
+<text x="954" y="455" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">Entrenamiento balanceado 1:1 fuego / sin fuego</text>
+<line x1="600" y1="310" x2="600" y2="348" stroke="#52514e" stroke-width="1.8" marker-end="url(#punta)"/>
+<line x1="1250" y1="310" x2="1250" y2="348" stroke="#52514e" stroke-width="1.8" marker-end="url(#punta)"/>
+<circle cx="34" cy="546" r="15" fill="#0b0b0b"/>
+<text x="34" y="551" font-size="15" fill="#ffffff" font-weight="700" text-anchor="middle">3</text>
+<text x="58" y="544" font-size="16" fill="#0b0b0b" font-weight="700" text-anchor="start">Evaluación</text>
+<text x="58" y="565" font-size="13" fill="#52514e" font-weight="400" text-anchor="start">src/metricas.py</text>
+<text x="58" y="584" font-size="13" fill="#52514e" font-weight="400" text-anchor="start" font-style="italic">Keras (AUC), NumPy</text>
+<rect x="290" y="524" width="1270" height="92" rx="10" fill="#e2f5ee" stroke="#12835b" stroke-width="1.6"/>
+<text x="304" y="550" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Misma regla para todos los modelos, sobre el conjunto de prueba (1 689 muestras de 64 × 64 km)</text>
+<text x="304" y="572" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">AUC PR (principal) · precisión · recall — no accuracy: solo el 1,1 % de los píxeles tiene fuego</text>
+<text x="304" y="591" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">Verificación: la persistencia reproduce al decimal los números del artículo (Tablas II y III)</text>
+<line x1="600" y1="484" x2="600" y2="522" stroke="#52514e" stroke-width="1.8" marker-end="url(#punta)"/>
+<line x1="1250" y1="484" x2="1250" y2="522" stroke="#52514e" stroke-width="1.8" marker-end="url(#punta)"/>
+<circle cx="34" cy="680" r="15" fill="#0b0b0b"/>
+<text x="34" y="685" font-size="15" fill="#ffffff" font-weight="700" text-anchor="middle">4</text>
+<text x="58" y="678" font-size="16" fill="#0b0b0b" font-weight="700" text-anchor="start">Explicabilidad</text>
+<text x="58" y="699" font-size="13" fill="#52514e" font-weight="400" text-anchor="start">paso3 · paso4</text>
+<text x="58" y="718" font-size="13" fill="#52514e" font-weight="400" text-anchor="start" font-style="italic">Scikit-learn, Keras</text>
+<rect x="290" y="658" width="410" height="92" rx="10" fill="#e2f5ee" stroke="#12835b" stroke-width="1.6"/>
+<text x="304" y="684" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Ablación de la red</text>
+<text x="304" y="706" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">re-entrenar sin el fuego previo</text>
+<text x="304" y="725" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">y solo con el fuego previo</text>
+<rect x="720" y="658" width="410" height="92" rx="10" fill="#e2f5ee" stroke="#12835b" stroke-width="1.6"/>
+<text x="734" y="684" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Importancia de Gini</text>
+<text x="734" y="706" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">random forest: qué columnas</text>
+<text x="734" y="725" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">separan mejor fuego / no fuego</text>
+<rect x="1150" y="658" width="410" height="92" rx="10" fill="#e2f5ee" stroke="#12835b" stroke-width="1.6"/>
+<text x="1164" y="684" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Coeficientes y ablación</text>
+<text x="1164" y="706" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">regresión logística: peso de</text>
+<text x="1164" y="725" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">cada variable y quitar una a una</text>
+<line x1="925" y1="618" x2="925" y2="656" stroke="#52514e" stroke-width="1.8" marker-end="url(#punta)"/>
+<circle cx="34" cy="814" r="15" fill="#0b0b0b"/>
+<text x="34" y="819" font-size="15" fill="#ffffff" font-weight="700" text-anchor="middle">5</text>
+<text x="58" y="812" font-size="16" fill="#0b0b0b" font-weight="700" text-anchor="start">Comparación</text>
+<text x="58" y="833" font-size="13" fill="#52514e" font-weight="400" text-anchor="start">paso5</text>
+<text x="58" y="852" font-size="13" fill="#52514e" font-weight="400" text-anchor="start" font-style="italic">Matplotlib</text>
+<rect x="290" y="792" width="1270" height="72" rx="10" fill="#e2f5ee" stroke="#12835b" stroke-width="1.6"/>
+<text x="304" y="818" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="start">Artículo frente a replicación</text>
+<text x="304" y="840" font-size="13.5" fill="#52514e" font-weight="400" text-anchor="start">Tablas II, III, IV, VI, VII y VIII lado a lado · curvas de entrenamiento · mapas de predicción · diferencias explicadas</text>
+<line x1="925" y1="752" x2="925" y2="790" stroke="#52514e" stroke-width="1.8" marker-end="url(#punta)"/>
+<rect x="290" y="888" width="20" height="14" rx="3" fill="#f1f0ec" stroke="#8a8983" stroke-width="1.4"/>
+<text x="318" y="900" font-size="13" fill="#52514e" font-weight="400" text-anchor="start">hecho por los autores (se reutiliza)</text>
+<rect x="620" y="888" width="20" height="14" rx="3" fill="#e6f0fb" stroke="#2a78d6" stroke-width="1.4"/>
+<text x="648" y="900" font-size="13" fill="#52514e" font-weight="400" text-anchor="start">datos</text>
+<rect x="740" y="888" width="20" height="14" rx="3" fill="#fdebe3" stroke="#eb6834" stroke-width="1.4"/>
+<text x="768" y="900" font-size="13" fill="#52514e" font-weight="400" text-anchor="start">modelos</text>
+<rect x="880" y="888" width="20" height="14" rx="3" fill="#e2f5ee" stroke="#12835b" stroke-width="1.4"/>
+<text x="908" y="900" font-size="13" fill="#52514e" font-weight="400" text-anchor="start">evaluación y resultados</text>
+</svg>

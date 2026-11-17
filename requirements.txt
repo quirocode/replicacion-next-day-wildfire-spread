@@ -1,0 +1,8 @@
+# Versiones con las que se corrió la replicación (cualquier TensorFlow 2.16+ con Keras 3 debería servir).
+tensorflow>=2.16
+scikit-learn>=1.4
+numpy>=1.26
+matplotlib>=3.8
+kagglehub>=0.3
+# Solo para regenerar el notebook a partir de los .py:
+nbformat>=5.9

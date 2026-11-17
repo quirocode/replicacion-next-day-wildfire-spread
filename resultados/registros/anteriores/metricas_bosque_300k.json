@@ -1,0 +1,11 @@
+{
+  "prueba": {
+    "auc_pr": 21.426215767860413,
+    "precision": 27.924525490897175,
+    "recall": 45.116682111952244,
+    "pixeles_validos": 6313864,
+    "pixeles_con_fuego": 83089
+  },
+  "w_usado": 5,
+  "pixeles_entrenamiento": 300000
+}
