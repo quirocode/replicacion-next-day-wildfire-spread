@@ -30,16 +30,16 @@ Documentación técnica de la replicación: qué investigó el artículo, cómo 
 
 | Modelo | Artículo (AUC PR / precisión / recall) | Replicación, muestra completa de 64 × 64 km | Replicación, recortes de 32 × 32 km |
 | --- | --- | --- | --- |
-| Red neuronal | 28,4 / 33,6 / 43,1 | 25,1 / 30,0 / 42,7 | 28,4 / 33,7 / 42,2 |
-| Random forest | 22,5 / 26,3 / 46,9 | 21,7 / 28,9 / 44,0 | no medido |
-| Regresión logística | 19,8 / 32,5 / 35,3 | 19,9 / 36,4 / 28,3 | no medido |
+| Red neuronal | 28,4 / 33,6 / 43,1 | 24,9 / 29,9 / 42,3 | 28,1 / 33,7 / 41,9 |
+| Random forest | 22,5 / 26,3 / 46,9 | 21,4 / 27,1 / 45,9 | no medido |
+| Regresión logística | 19,8 / 32,5 / 35,3 | 20,0 / 36,4 / 28,4 | no medido |
 | Persistencia | 11,5 / 35,7 / 27,3 | 11,5 / 35,7 / 27,3 | 14,3 / 40,1 / 26,4 |
 
 **Lectura en tres frases.**
 
-1. **El orden y casi todos los valores se reproducen.** La red supera al random forest, este a la regresión logística y esta a la persistencia. La persistencia sale idéntica; el AUC PR de la regresión logística queda a 0,1 puntos y el del random forest a 0,8.
-2. **El número de la red depende de sobre qué píxeles se mide.** Con el mismo protocolo que los modelos base (muestra completa) da 25,1; sobre recortes de 32 × 32 km da 28,4, el valor del artículo. El artículo no dice cuál usó para la red; la evidencia apunta a que midió la red sobre recortes y los modelos base sobre la muestra completa (sección 10).
-3. **El fuego de hoy es la variable decisiva.** Sin él, el AUC PR de la red cae a 3,8 (6,9 sobre recortes; el artículo reporta 6,8) y el de la regresión logística a 3,1 (el artículo: 3,1).
+1. **El orden y casi todos los valores se reproducen.** La red supera al random forest, este a la regresión logística y esta a la persistencia. La persistencia sale idéntica; el AUC PR de la regresión logística queda a 0,2 puntos y el del random forest a 1,1.
+2. **El número de la red depende de sobre qué píxeles se mide.** Con el mismo protocolo que los modelos base (muestra completa) da 24,9; sobre recortes de 32 × 32 km da 28,1, a 0,3 puntos del artículo (28,4). El artículo no dice cuál usó para la red; la evidencia apunta a que midió la red sobre recortes y los modelos base sobre la muestra completa (sección 10).
+3. **El fuego de hoy es la variable decisiva.** Sin él, el AUC PR de la red cae a 3,8 (6,9 sobre recortes; el artículo reporta 6,8) y el de la regresión logística a 3,2 (el artículo: 3,1).
 
 ---
 
@@ -241,7 +241,7 @@ Un dataset abierto permite comparar modelos; el aprendizaje profundo supera a lo
 | Matplotlib | Figuras | — |
 | Jupyter (Kaggle Notebooks o Google Colab) | Ejecutar con GPU gratuita y mostrar evidencias | — |
 
-Versiones con las que se corrió esta replicación: Python 3.13, TensorFlow 2.21, Keras 3.15, Scikit-learn 1.9, NumPy 2.5, Matplotlib 3.11. CPU de 4 núcleos, sin GPU.
+Los resultados de este documento se obtuvieron en Kaggle Notebooks con una GPU NVIDIA T4 y el presupuesto `prototipo`.
 
 ---
 
@@ -311,10 +311,10 @@ replicacion_wildfire/
 ├── paso3_modelos_base.py
 ├── paso4_ablacion_red.py
 ├── paso5_comparar_con_articulo.py
-├── extra_tasa_aprendizaje.py   experimento adicional (no está en el artículo ni en el notebook)
+├── extra_tasa_aprendizaje.py   experimento opcional (no está en el artículo, en el notebook ni en los resultados)
 ├── herramientas/           generadores del notebook y de los diagramas
 ├── arquitectura/           diagramas (SVG y PNG)
-├── resultados/             métricas (JSON), figuras (PNG), modelos, registros
+├── resultados/             métricas (JSON), figuras (PNG) y modelos (salida de Kaggle)
 └── datos/                  TFRecord de Kaggle (no se incluye en el .zip)
 ```
 
@@ -470,22 +470,22 @@ Los conteos coinciden exactamente: los datos de Kaggle son los del artículo.
 
 | Modelo | AUC PR art. | AUC PR rép. | Δ | Prec. art. | Prec. rép. | Δ | Recall art. | Recall rép. | Δ |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Red neuronal | 28,4 | 25,1 | -3,3 | 33,6 | 30,0 | -3,6 | 43,1 | 42,7 | -0,4 |
-| Random forest | 22,5 | 21,7 | -0,8 | 26,3 | 28,9 | +2,6 | 46,9 | 44,0 | -2,9 |
-| Regresión logística | 19,8 | 19,9 | +0,1 | 32,5 | 36,4 | +3,9 | 35,3 | 28,3 | -7,0 |
+| Red neuronal | 28,4 | 24,9 | -3,5 | 33,6 | 29,9 | -3,7 | 43,1 | 42,3 | -0,8 |
+| Random forest | 22,5 | 21,4 | -1,1 | 26,3 | 27,1 | +0,8 | 46,9 | 45,9 | -1,0 |
+| Regresión logística | 19,8 | 20,0 | +0,2 | 32,5 | 36,4 | +3,9 | 35,3 | 28,4 | -6,9 |
 | Persistencia | 11,5 | 11,5 | 0,0 | 35,7 | 35,7 | 0,0 | 27,3 | 27,3 | 0,0 |
 
 Los mismos modelos medidos sobre recortes aleatorios de 32 x 32 km:
 
 | Modelo (recortes de 32 x 32 km) | AUC PR art. | AUC PR rép. | Δ | Prec. art. | Prec. rép. | Δ | Recall art. | Recall rép. | Δ |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Red neuronal | 28,4 | 28,4 | 0,0 | 33,6 | 33,7 | +0,1 | 43,1 | 42,2 | -0,9 |
+| Red neuronal | 28,4 | 28,1 | -0,3 | 33,6 | 33,7 | +0,1 | 43,1 | 41,9 | -1,2 |
 | Persistencia | 11,5 | 14,3 | +2,8 | 35,7 | 40,1 | +4,4 | 27,3 | 26,4 | -0,9 |
 
-- Red neuronal: 28 080 pasos de entrenamiento (60 épocas x 468 pasos en CPU); el artículo usó 1 000 000 de pasos en 4 GPU V100.
-- Mejor época según validación: 58 (AUC PR de validación 21,4 %).
-- Variación del AUC PR de la red entre tres juegos de recortes distintos: ±0,12 puntos.
-- Regresión logística: W = 7 (el del artículo), 1 000 000 píxeles de entrenamiento. El mejor W en nuestra validación fue 1; con él, en prueba: AUC PR 19,7 %, precisión 21,2 %, recall 45,7 %.
+- Red neuronal: 28 080 pasos de entrenamiento (60 épocas x 468 pasos); el artículo usó 1 000 000 de pasos en 4 GPU V100.
+- Mejor época según validación: 49 (AUC PR de validación 21,5 %).
+- Variación del AUC PR de la red entre tres juegos de recortes distintos: ±0,02 puntos.
+- Regresión logística: W = 7 (el del artículo), 1 000 000 píxeles de entrenamiento. El mejor W en nuestra validación fue 1; con él, en prueba: AUC PR 19,7 %, precisión 21,2 %, recall 45,6 %.
 - Random forest: W = 5; entrenado con 1 000 000 píxeles.
 
 ### 8.3 Tabla III (filas de persistencia) — Resolución más gruesa
@@ -498,107 +498,105 @@ Los mismos modelos medidos sobre recortes aleatorios de 32 x 32 km:
 
 ### 8.4 Ablación de la red neuronal
 
-Medido sobre muestra completa de 64 x 64 km:
+Medido sobre la muestra completa de 64 x 64 km:
 
 | Variables de entrada | AUC PR art. | AUC PR rép. | Δ | Prec. art. | Prec. rép. | Δ | Recall art. | Recall rép. | Δ |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Las 12 variables (Tabla II) | 28,4 | 25,1 | -3,3 | 33,6 | 30,0 | -3,6 | 43,1 | 42,7 | -0,4 |
-| Sin el fuego previo (Tabla IV) | 6,8 | 3,8 | -3,0 | 4,6 | 18,2 | +13,6 | 0,2 | 0,6 | +0,4 |
-| Solo el fuego previo (Sección V-B) | 22,9 | 18,9 | -4,0 | 29,2 | 21,1 | -8,1 | 49,6 | 53,9 | +4,3 |
+| Las 12 variables (Tabla II) | 28,4 | 24,9 | -3,5 | 33,6 | 29,9 | -3,7 | 43,1 | 42,3 | -0,8 |
+| Sin el fuego previo (Tabla IV) | 6,8 | 3,8 | -3,0 | 4,6 | 15,6 | +11,0 | 0,2 | 0,8 | +0,6 |
+| Solo el fuego previo (Sección V-B) | 22,9 | 18,0 | -4,9 | 29,2 | 24,9 | -4,3 | 49,6 | 48,5 | -1,1 |
 
 Medido sobre recortes de 32 x 32 km:
 
 | Variables de entrada | AUC PR art. | AUC PR rép. | Δ | Prec. art. | Prec. rép. | Δ | Recall art. | Recall rép. | Δ |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Las 12 variables (Tabla II) | 28,4 | 28,4 | 0,0 | 33,6 | 33,7 | +0,1 | 43,1 | 42,2 | -0,9 |
-| Sin el fuego previo (Tabla IV) | 6,8 | 6,9 | +0,1 | 4,6 | 20,4 | +15,8 | 0,2 | 0,2 | 0,0 |
-| Solo el fuego previo (Sección V-B) | 22,9 | 21,3 | -1,6 | 29,2 | 25,8 | -3,4 | 49,6 | 52,0 | +2,4 |
-
-Experimento adicional, fuera del artículo: las 12 variables con tasa de aprendizaje 0,001 y 30 épocas (14 040 pasos): AUC PR 23,7 / precisión 33,8 / recall 32,5 sobre 64 x 64 km; 28,0 / 37,8 / 34,4 sobre recortes de 32 x 32 km.
+| Las 12 variables (Tabla II) | 28,4 | 28,1 | -0,3 | 33,6 | 33,7 | +0,1 | 43,1 | 41,9 | -1,2 |
+| Sin el fuego previo (Tabla IV) | 6,8 | 6,9 | +0,1 | 4,6 | 15,3 | +10,7 | 0,2 | 0,3 | +0,1 |
+| Solo el fuego previo (Sección V-B) | 22,9 | 21,3 | -1,6 | 29,2 | 29,6 | +0,4 | 49,6 | 47,7 | -1,9 |
 
 ### 8.5 Tabla VIII — Regresión logística quitando una variable
 
 | Variable quitada | AUC PR art. | AUC PR rép. | Δ | Prec. art. | Prec. rép. | Δ | Recall art. | Recall rép. | Δ |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Fuego previo (día t) | 3,1 | 3,1 | 0,0 | 0,0 | 0,0 | 0,0 | 0,0 | 0,0 | 0,0 |
-| ERC | 19,6 | 19,8 | +0,2 | 32,4 | 36,4 | +4,0 | 35,5 | 28,3 | -7,2 |
-| Elevación | 19,6 | 19,9 | +0,3 | 32,3 | 36,4 | +4,1 | 35,5 | 28,4 | -7,1 |
-| Sequía (PDSI) | 19,6 | 19,8 | +0,2 | 32,4 | 36,6 | +4,2 | 35,4 | 28,1 | -7,3 |
-| Temp. mínima | 19,6 | 19,9 | +0,3 | 32,2 | 36,3 | +4,1 | 35,5 | 28,3 | -7,2 |
-| Dirección del viento | 19,7 | 19,8 | +0,1 | 32,3 | 36,2 | +3,9 | 35,7 | 28,6 | -7,1 |
-| Temp. máxima | 19,7 | 19,8 | +0,1 | 32,3 | 36,5 | +4,2 | 35,5 | 28,1 | -7,4 |
-| Vegetación (NDVI) | 19,8 | 19,9 | +0,1 | 32,3 | 36,6 | +4,3 | 35,6 | 28,5 | -7,1 |
-| Precipitación | 19,8 | 19,9 | +0,1 | 32,3 | 36,3 | +4,0 | 35,6 | 28,8 | -6,8 |
-| Población | 19,8 | 19,9 | +0,1 | 32,3 | 36,4 | +4,1 | 35,6 | 28,6 | -7,0 |
-| Humedad | 19,8 | 19,9 | +0,1 | 32,4 | 36,5 | +4,1 | 35,6 | 28,5 | -7,1 |
+| Fuego previo (día t) | 3,1 | 3,2 | +0,1 | 0,0 | 0,0 | 0,0 | 0,0 | 0,0 | 0,0 |
+| ERC | 19,6 | 19,8 | +0,2 | 32,4 | 36,3 | +3,9 | 35,5 | 28,6 | -6,9 |
+| Elevación | 19,6 | 19,9 | +0,3 | 32,3 | 36,4 | +4,1 | 35,5 | 28,5 | -7,0 |
+| Sequía (PDSI) | 19,6 | 19,8 | +0,2 | 32,4 | 36,8 | +4,4 | 35,4 | 27,9 | -7,5 |
+| Temp. mínima | 19,6 | 19,7 | +0,1 | 32,2 | 36,2 | +4,0 | 35,5 | 28,2 | -7,3 |
+| Dirección del viento | 19,7 | 19,8 | +0,1 | 32,3 | 36,2 | +3,9 | 35,7 | 28,4 | -7,3 |
+| Temp. máxima | 19,7 | 19,8 | +0,1 | 32,3 | 36,4 | +4,1 | 35,5 | 28,3 | -7,2 |
+| Vegetación (NDVI) | 19,8 | 19,9 | +0,1 | 32,3 | 36,5 | +4,2 | 35,6 | 28,6 | -7,0 |
+| Precipitación | 19,8 | 19,9 | +0,1 | 32,3 | 36,6 | +4,3 | 35,6 | 28,4 | -7,2 |
+| Población | 19,8 | 19,9 | +0,1 | 32,3 | 36,4 | +4,1 | 35,6 | 28,8 | -6,8 |
+| Humedad | 19,8 | 19,9 | +0,1 | 32,4 | 36,4 | +4,0 | 35,6 | 28,6 | -7,0 |
 | Velocidad del viento | 20,0 | 20,0 | 0,0 | 32,1 | 36,3 | +4,2 | 35,7 | 28,8 | -6,9 |
 
 ### 8.6 Tabla VI — Random forest: 20 columnas más importantes (Gini)
 
 | # | Artículo | Importancia | Replicación | Importancia |
 | ---: | --- | ---: | --- | ---: |
-| 1 | Fuego previo (día t) (5) | 0,092 | Fuego previo (día t) (1) | 0,081 |
-| 2 | Fuego previo (día t) (6) | 0,074 | Fuego previo (día t) (4) | 0,079 |
-| 3 | Fuego previo (día t) (4) | 0,073 | Fuego previo (día t) (5) | 0,079 |
-| 4 | Fuego previo (día t) (2) | 0,071 | Fuego previo (día t) (7) | 0,068 |
-| 5 | Fuego previo (día t) (1) | 0,068 | Fuego previo (día t) (8) | 0,067 |
-| 6 | Fuego previo (día t) (8) | 0,067 | Fuego previo (día t) (9) | 0,066 |
-| 7 | Fuego previo (día t) (9) | 0,061 | Fuego previo (día t) (2) | 0,064 |
-| 8 | Fuego previo (día t) (3) | 0,052 | Fuego previo (día t) (3) | 0,060 |
-| 9 | Fuego previo (día t) (7) | 0,051 | Fuego previo (día t) (6) | 0,055 |
+| 1 | Fuego previo (día t) (5) | 0,092 | Fuego previo (día t) (5) | 0,099 |
+| 2 | Fuego previo (día t) (6) | 0,074 | Fuego previo (día t) (1) | 0,071 |
+| 3 | Fuego previo (día t) (4) | 0,073 | Fuego previo (día t) (4) | 0,069 |
+| 4 | Fuego previo (día t) (2) | 0,071 | Fuego previo (día t) (7) | 0,067 |
+| 5 | Fuego previo (día t) (1) | 0,068 | Fuego previo (día t) (3) | 0,067 |
+| 6 | Fuego previo (día t) (8) | 0,067 | Fuego previo (día t) (8) | 0,065 |
+| 7 | Fuego previo (día t) (9) | 0,061 | Fuego previo (día t) (9) | 0,065 |
+| 8 | Fuego previo (día t) (3) | 0,052 | Fuego previo (día t) (2) | 0,060 |
+| 9 | Fuego previo (día t) (7) | 0,051 | Fuego previo (día t) (6) | 0,053 |
 | 10 | ERC (7) | 0,017 | ERC (9) | 0,012 |
-| 11 | ERC (8) | 0,014 | ERC (6) | 0,010 |
-| 12 | ERC (5) | 0,014 | ERC (8) | 0,010 |
-| 13 | ERC (6) | 0,012 | ERC (7) | 0,009 |
-| 14 | ERC (9) | 0,010 | ERC (1) | 0,008 |
+| 11 | ERC (8) | 0,014 | ERC (6) | 0,011 |
+| 12 | ERC (5) | 0,014 | ERC (7) | 0,009 |
+| 13 | ERC (6) | 0,012 | ERC (8) | 0,009 |
+| 14 | ERC (9) | 0,010 | ERC (1) | 0,009 |
 | 15 | ERC (2) | 0,008 | ERC (2) | 0,008 |
 | 16 | ERC (1) | 0,008 | ERC (4) | 0,007 |
 | 17 | ERC (4) | 0,008 | ERC (3) | 0,007 |
 | 18 | ERC (3) | 0,007 | ERC (5) | 0,006 |
-| 19 | Elevación (7) | 0,007 | Elevación (5) | 0,005 |
-| 20 | Elevación (9) | 0,005 | Dirección del viento (2) | 0,005 |
+| 19 | Elevación (7) | 0,007 | Elevación (8) | 0,006 |
+| 20 | Elevación (9) | 0,005 | Elevación (5) | 0,005 |
 
 Suma de la importancia por variable (replicación, 9 posiciones):
 
 | Variable | Importancia |
 | --- | ---: |
-| Fuego previo (día t) | 0,620 |
-| ERC | 0,077 |
-| Dirección del viento | 0,041 |
+| Fuego previo (día t) | 0,616 |
+| ERC | 0,078 |
+| Dirección del viento | 0,040 |
 | Elevación | 0,039 |
-| Temp. mínima | 0,035 |
-| Velocidad del viento | 0,035 |
+| Temp. mínima | 0,037 |
+| Velocidad del viento | 0,037 |
 | Humedad | 0,035 |
-| Sequía (PDSI) | 0,032 |
-| Vegetación (NDVI) | 0,031 |
+| Sequía (PDSI) | 0,033 |
+| Vegetación (NDVI) | 0,030 |
 | Temp. máxima | 0,029 |
-| Población | 0,021 |
+| Población | 0,020 |
 | Precipitación | 0,006 |
 
 ### 8.7 Tabla VII — Regresión logística: 20 coeficientes más grandes (replicación)
 
 | # | Columna | Coeficiente |
 | ---: | --- | ---: |
-| 1 | Fuego previo (día t) (1) | +1,37 |
-| 2 | Fuego previo (día t) (9) | +1,29 |
-| 3 | Fuego previo (día t) (3) | +1,03 |
-| 4 | Fuego previo (día t) (7) | +1,01 |
-| 5 | Fuego previo (día t) (4) | +0,84 |
-| 6 | Fuego previo (día t) (6) | +0,80 |
-| 7 | ERC (9) | +0,29 |
-| 8 | ERC (1) | -0,23 |
-| 9 | Fuego previo (día t) (5) | +0,22 |
-| 10 | Velocidad del viento (9) | +0,20 |
-| 11 | Elevación (9) | -0,18 |
-| 12 | ERC (8) | +0,17 |
-| 13 | Elevación (4) | +0,17 |
-| 14 | Fuego previo (día t) (8) | +0,17 |
-| 15 | Fuego previo (día t) (2) | +0,16 |
-| 16 | Temp. mínima (9) | +0,15 |
-| 17 | ERC (6) | +0,14 |
-| 18 | Temp. máxima (7) | -0,13 |
-| 19 | ERC (2) | -0,13 |
-| 20 | Temp. máxima (8) | -0,12 |
+| 1 | Fuego previo (día t) (1) | +1,33 |
+| 2 | Fuego previo (día t) (9) | +1,25 |
+| 3 | Fuego previo (día t) (3) | +1,05 |
+| 4 | Fuego previo (día t) (7) | +1,04 |
+| 5 | Fuego previo (día t) (4) | +0,83 |
+| 6 | Fuego previo (día t) (6) | +0,78 |
+| 7 | ERC (9) | +0,34 |
+| 8 | ERC (1) | -0,28 |
+| 9 | Fuego previo (día t) (5) | +0,26 |
+| 10 | Velocidad del viento (9) | +0,21 |
+| 11 | Fuego previo (día t) (8) | +0,20 |
+| 12 | ERC (8) | +0,19 |
+| 13 | Elevación (9) | -0,18 |
+| 14 | Elevación (4) | +0,18 |
+| 15 | Fuego previo (día t) (2) | +0,18 |
+| 16 | Temp. máxima (8) | -0,17 |
+| 17 | ERC (2) | -0,16 |
+| 18 | Temp. máxima (7) | -0,15 |
+| 19 | ERC (6) | +0,15 |
+| 20 | Temp. máxima (3) | +0,14 |
 
 ### 8.8 Figuras
 
@@ -606,24 +604,21 @@ Suma de la importancia por variable (replicación, 9 posiciones):
 
 ![Curvas de entrenamiento](resultados/fig2_curvas_entrenamiento.png)
 
-La validación sube rápido hasta la época 20 y luego casi no mejora (de 20,4 a 21,4 % entre las épocas 20 y 58), mientras el entrenamiento sigue subiendo: la red empieza a memorizar.
+La validación sube rápido hasta la época 20 y luego casi no mejora (de 20,3 a 21,5 % entre las épocas 20 y 49), mientras el entrenamiento sigue subiendo: la red empieza a memorizar.
 
 ![Predicciones de la red](resultados/fig3_predicciones.png)
 
-En las cinco mejores, la red acierta la zona y redondea los bordes, como describe el artículo. En casi todas las peores, el fuego de mañana aparece donde hoy no hay fuego o hay apenas un píxel, y la red no predice nada: no tiene de dónde. En una, la red agranda un foco pequeño que mañana ya no está, mientras el fuego real aparece junto a una zona que hoy estaba tapada por nubes (píxeles negros).
+En las cinco mejores, la red acierta la zona y redondea los bordes, como describe el artículo. En casi todas las peores, el fuego de mañana aparece donde hoy no hay fuego, hay apenas un píxel o la zona estaba tapada por nubes (píxeles negros), y la red no predice nada: no tiene de dónde. En una, la red predice un foco pequeño mientras el fuego real aparece en otra parte del recorte.
 
 ![Importancia de variables](resultados/fig5_importancia_variables.png)
 
 ### 8.9 Tiempos de cómputo
 
-| Tarea | Tiempo (CPU, 1 núcleo por tarea) |
+| Tarea | Tiempo (Kaggle, GPU NVIDIA T4) |
 | --- | --- |
-| Entrenar la red, 60 épocas | 58 min |
-| Tabla de 1 000 000 de píxeles | 21 s |
-| Random forest con 1 000 000 de píxeles | 14 min |
-| Notebook completo con presupuesto `prueba` | 6 min |
+| Entrenar cada red, 60 épocas | unos 12 min |
 
-Los registros de cada corrida están en `resultados/registros/`.
+Las figuras 2 y 3 se generaron con el historial y los pesos de esa misma ejecución (`resultados/historial_red_todas.json` y `resultados/modelos/red_todas.weights.h5`), usando la última celda del paso 5. Con esos pesos, la red vuelve a dar 28,1 de AUC PR sobre los recortes de prueba.
 
 ---
 
@@ -631,15 +626,15 @@ Los registros de cada corrida están en `resultados/registros/`.
 
 | # | Diferencia | Artículo | Replicación | Efecto esperado |
 | --- | --- | --- | --- | --- |
-| 0 | Píxeles sobre los que se mide la red | No lo dice | Se reportan dos: muestra completa y recortes de 32 × 32 | El mayor: 3,3 puntos de AUC PR (25,1 frente a 28,4) |
+| 0 | Píxeles sobre los que se mide la red | No lo dice | Se reportan dos: muestra completa y recortes de 32 × 32 | El mayor: 3,5 puntos de AUC PR (24,9 frente a 28,4) |
 | 1 | Pasos de entrenamiento | 1 000 000 (1000 × 1000) | 28 080 (60 × 468), el 2,8 % | Menor de lo esperado: la validación se estabiliza cerca de la época 20 |
-| 2 | Hardware | 4 GPU V100 | CPU de 4 núcleos | Obliga a la diferencia 1 |
+| 2 | Hardware | 4 GPU V100 | 1 GPU NVIDIA T4 (Kaggle) | Obliga a la diferencia 1 |
 | 3 | Tamaño de lote | No lo dice (exploró 32 a 256) | 32 | Menor; con pocos pasos, lotes chicos dan más actualizaciones |
 | 4 | Búsqueda de hiperparámetros | En grilla | No se repite; se usan los valores finales publicados | Ninguno si los valores publicados son los óptimos |
 | 5 | Script de entrenamiento | No publicado | Reconstruido desde el texto | Posibles detalles no documentados |
 | 6 | Filtros de la red | "16 en todos los bloques, 32 en los dos ResBlocks centrales" | 16 al inicio y en el último ResBlock, 32 en los otros tres (lo que produce el código publicado con `(16, 32)`) | Menor: unos pocos miles de parámetros |
 | 7 | Rotaciones | "Random rotation" | Múltiplos de 90°, como en el código publicado | Ninguno si el artículo hizo lo mismo |
-| 8 | Píxeles de entrenamiento de los modelos base | No lo dice | 1 000 000 para cada uno | Menor: el bosque pasó de 21,4 a 21,7 al subir de 300 000 a 1 000 000 |
+| 8 | Píxeles de entrenamiento de los modelos base | No lo dice | 1 000 000 para cada uno | Menor: con 1 000 000 de píxeles el bosque queda a 1,1 puntos del artículo |
 | 9 | Peso W | Elegido por AUC PR de validación: 7 y 5 | Se usan 7 y 5; la búsqueda se repite solo para la logística | Cambia precisión y recall, casi no el AUC PR |
 | 10 | Versiones | TensorFlow ≥ 2.7 (2021) | TensorFlow 2.21 / Keras 3 | Ninguno conocido |
 | 11 | Semilla | No reportada | 123 | Variación entre corridas |
@@ -652,28 +647,28 @@ Los registros de cada corrida están en `resultados/registros/`.
 Medida sobre la muestra completa de 64 × 64 km da 11,5 / 35,7 / 27,3, y a 2, 4 y 8 km da los tres resultados de la Tabla III sin ninguna diferencia. La persistencia no se entrena: si coincide, los datos, la métrica y los píxeles evaluados son los mismos del artículo. Sobre recortes de 32 × 32 km daría 14,3 / 40,1 / 26,4, que no coincide.
 
 **2. La red reproduce al artículo, pero sobre recortes de 32 × 32 km.**
-Sobre recortes da 28,4 / 33,7 / 42,2 frente a 28,4 / 33,6 / 43,1 del artículo. La ablación coincide bajo el mismo protocolo: sin el fuego previo, 6,9 de AUC PR frente a 6,8. Sobre la muestra completa la misma red da 25,1.
+Sobre recortes da 28,1 / 33,7 / 41,9 frente a 28,4 / 33,6 / 43,1 del artículo. La ablación coincide bajo el mismo protocolo: sin el fuego previo, 6,9 de AUC PR frente a 6,8. Sobre la muestra completa la misma red da 24,9.
 
 **3. Hipótesis: la Tabla II del artículo mezcla dos protocolos.**
-Los modelos base coinciden con el artículo solo sobre la muestra completa, y la red solo sobre recortes. Además, el código publicado aplica al evaluar la red el mismo recorte aleatorio configurado para entrenarla (`dataset.py`, modo `PREDICT`), y el artículo menciona una variación de 0,5 puntos "por el recorte aleatorio". Si es así, la ventaja de la red sobre el random forest sería de 3,4 puntos con protocolo único (25,1 frente a 21,7) y no de 5,9 como sugiere la Tabla II. Es una inferencia a partir de coincidencias numéricas, no un hecho confirmado: el artículo no describe el protocolo y la red de esta replicación se entrenó con menos pasos.
+Los modelos base coinciden con el artículo solo sobre la muestra completa, y la red solo sobre recortes. Además, el código publicado aplica al evaluar la red el mismo recorte aleatorio configurado para entrenarla (`dataset.py`, modo `PREDICT`), y el artículo menciona una variación de 0,5 puntos "por el recorte aleatorio". Si es así, la ventaja de la red sobre el random forest sería de 3,5 puntos con protocolo único (24,9 frente a 21,4) y no de 5,9 como sugiere la Tabla II. Es una inferencia a partir de coincidencias numéricas, no un hecho confirmado: el artículo no describe el protocolo y la red de esta replicación se entrenó con menos pasos.
 
 **4. Por qué los recortes dan números más altos.**
 El fuego suele estar hacia el centro de la muestra, y un recorte aleatorio de 32 × 32 casi siempre incluye el centro. En el conjunto de prueba, el 2,85 % de los píxeles de los recortes tiene fuego; en la muestra completa, el 1,25 %. Con más positivos, el AUC PR sube sin que el modelo cambie.
 
 **5. La regresión logística reproduce el AUC PR y la ablación, no el punto de operación.**
-AUC PR de 19,9 frente a 19,8. Quitar el fuego previo da 3,1 / 0,0 / 0,0, idéntico al artículo; quitar cualquier otra variable deja el AUC PR entre 19,8 y 20,0 (artículo: 19,6 a 20,0). La precisión (36,4 frente a 32,5) y el recall (28,3 frente a 35,3) sí difieren: dependen del umbral de 0,5 y del peso W, y el artículo no detalla cómo balanceó los datos.
+AUC PR de 20,0 frente a 19,8. Quitar el fuego previo da 3,2 / 0,0 / 0,0 (artículo: 3,1 / 0,0 / 0,0); quitar cualquier otra variable deja el AUC PR entre 19,7 y 20,0 (artículo: 19,6 a 20,0). La precisión (36,4 frente a 32,5) y el recall (28,4 frente a 35,3) sí difieren: dependen del umbral de 0,5 y del peso W, y el artículo no detalla cómo balanceó los datos.
 
 **6. El peso W casi no cambia el AUC PR.**
-En validación, el AUC PR va de 11,2 a 11,3 para W entre 1 y 8. W solo mueve el equilibrio entre precisión y recall: con W = 1 la logística da 21,2 de precisión y 45,7 de recall; con W = 7, 36,4 y 28,3. La búsqueda eligió W = 1 por un margen que es ruido; el artículo eligió 7.
+En validación, el AUC PR va de 11,2 a 11,4 para W entre 1 y 8. W solo mueve el equilibrio entre precisión y recall: con W = 1 la logística da 21,2 de precisión y 45,6 de recall; con W = 7, 36,4 y 28,4. La búsqueda eligió W = 1 por un margen que es ruido; el artículo eligió 7.
 
 **7. El random forest queda cerca y ordena las variables igual.**
-21,7 / 28,9 / 44,0 frente a 22,5 / 26,3 / 46,9. Las nueve columnas más importantes son el fuego previo en las nueve posiciones y las nueve siguientes son el ERC, igual que en la Tabla VI. Sumando las nueve posiciones, el fuego previo pesa 0,620 (artículo: 0,609) y el ERC 0,077 (artículo: 0,098). Con 300 000 píxeles de entrenamiento en vez de 1 000 000 el AUC PR era 21,4.
+21,4 / 27,1 / 45,9 frente a 22,5 / 26,3 / 46,9. Las nueve columnas más importantes son el fuego previo en las nueve posiciones y las nueve siguientes son el ERC, igual que en la Tabla VI; la primera es, como en el artículo, el fuego previo del píxel central. Sumando las nueve posiciones, el fuego previo pesa 0,616 (artículo: 0,609) y el ERC 0,078 (artículo: 0,098).
 
 **8. Los coeficientes de la regresión logística (Tabla VII) no se reproducen.**
-En el artículo los coeficientes más grandes son de temperatura y ERC (hasta 7,2 en valor absoluto) y el fuego previo no aparece entre los 20 primeros. Aquí los seis más grandes son del fuego previo (hasta 1,37). No se identificó la causa. Las variables están muy correlacionadas entre vecinos, y en ese caso los coeficientes individuales son inestables aunque el modelo prediga igual; también puede influir cómo normalizaron las columnas.
+En el artículo los coeficientes más grandes son de temperatura y ERC (hasta 7,2 en valor absoluto) y el fuego previo no aparece entre los 20 primeros. Aquí los seis más grandes son del fuego previo (hasta 1,33). No se identificó la causa. Las variables están muy correlacionadas entre vecinos, y en ese caso los coeficientes individuales son inestables aunque el modelo prediga igual; también puede influir cómo normalizaron las columnas.
 
 **9. Más pasos de entrenamiento ayudarían poco.**
-La validación se estabiliza cerca de la época 20. Un experimento adicional, que no está en el artículo, con una tasa de aprendizaje 10 veces mayor y la mitad de las épocas llegó casi al mismo punto (28,0 de AUC PR sobre recortes; 23,7 sobre la muestra completa). El presupuesto reducido no parece ser lo que limita a la red.
+La validación sube rápido hasta cerca de la época 20 y después casi no mejora (mejor época: 49, con 21,5 de AUC PR en validación). El presupuesto reducido no parece ser lo que limita a la red.
 
 **10. Las constantes de normalización no corresponden exactamente a los datos publicados.**
 Las medias calculadas sobre el entrenamiento de Kaggle difieren de las del código: elevación 895 m frente a 657; ERC 53,5 frente a 37; precipitación 0,32 mm frente a 1,7. Un comentario en `constants.py` explica el motivo: las calcularon sobre dos conjuntos (`train_ongoing` y `train_onset`) y en Kaggle solo está el de incendios en curso. Se mantuvieron las constantes de los autores para replicar su modelo.
@@ -685,7 +680,7 @@ ERC entre −1 196 y 2 471, temperatura máxima de 0 a 1 230 K, precipitación d
 Están el modelo, la pérdida, las métricas y la lectura de datos, pero no el script de entrenamiento ni los hiperparámetros finales (tamaño de lote, filtros exactos, si se corrige el viento al voltear). El texto dice que el clima es el promedio del día; el código de exportación toma la mediana de los dos días anteriores.
 
 **13. Sin el fuego previo, la precisión no es comparable.**
-La red sin fuego previo marca fuego en muy pocos píxeles (recall de 0,2 a 0,6 %). Con tan pocos, la precisión (18 a 20 % aquí; 4,6 % en el artículo) depende de un puñado de píxeles.
+La red sin fuego previo marca fuego en muy pocos píxeles (recall de 0,3 a 0,8 %). Con tan pocos, la precisión (cerca de 15 % aquí; 4,6 % en el artículo) depende de un puñado de píxeles.
 
 ---
 
@@ -704,7 +699,7 @@ La red sin fuego previo marca fuego en muy pocos píxeles (recall de 0,2 a 0,6 %
 
 Dos resultados de esta replicación pesan en el diseño de la tesis:
 
-1. **El protocolo de evaluación mueve el resultado tanto como el modelo.** La persistencia pasa de 11,5 a 14,3 y la red de 25,1 a 28,4 solo por cambiar los píxeles evaluados. Para comparar EE. UU. con el Perú hay que fijar un único protocolo antes de medir, o el "cambio de dominio" observado puede ser un efecto del recorte.
+1. **El protocolo de evaluación mueve el resultado tanto como el modelo.** La persistencia pasa de 11,5 a 14,3 y la red de 24,9 a 28,1 solo por cambiar los píxeles evaluados. Para comparar EE. UU. con el Perú hay que fijar un único protocolo antes de medir, o el "cambio de dominio" observado puede ser un efecto del recorte.
 2. **Todo descansa en el fuego de hoy.** Sin esa variable ningún modelo funciona. En la Amazonía las nubes tapan MODIS con frecuencia, de modo que la variable más importante es también la más frágil. Es una hipótesis para probar con los datos peruanos: cuánto cae el modelo cuando la máscara de hoy tiene muchos píxeles inciertos.
 
 ---

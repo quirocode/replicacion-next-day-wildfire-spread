@@ -2,101 +2,101 @@
   {
     "variable": "PrevFireMask",
     "posicion": 1,
-    "coeficiente": 1.3709111213684082
+    "coeficiente": 1.3265320340134368
   },
   {
     "variable": "PrevFireMask",
     "posicion": 9,
-    "coeficiente": 1.290955662727356
+    "coeficiente": 1.2530198233242227
   },
   {
     "variable": "PrevFireMask",
     "posicion": 3,
-    "coeficiente": 1.0345875024795532
+    "coeficiente": 1.0492111933097654
   },
   {
     "variable": "PrevFireMask",
     "posicion": 7,
-    "coeficiente": 1.0087941884994507
+    "coeficiente": 1.0361064320577686
   },
   {
     "variable": "PrevFireMask",
     "posicion": 4,
-    "coeficiente": 0.8447940349578857
+    "coeficiente": 0.8300500846985697
   },
   {
     "variable": "PrevFireMask",
     "posicion": 6,
-    "coeficiente": 0.7981134653091431
+    "coeficiente": 0.7817509115408579
   },
   {
     "variable": "erc",
     "posicion": 9,
-    "coeficiente": 0.29048609733581543
+    "coeficiente": 0.3368520502218913
   },
   {
     "variable": "erc",
     "posicion": 1,
-    "coeficiente": -0.2305263876914978
+    "coeficiente": -0.2756558355322531
   },
   {
     "variable": "PrevFireMask",
     "posicion": 5,
-    "coeficiente": 0.2201966941356659
+    "coeficiente": 0.2622483600310028
   },
   {
     "variable": "vs",
     "posicion": 9,
-    "coeficiente": 0.1950189769268036
+    "coeficiente": 0.21210391744036444
   },
   {
-    "variable": "elevation",
-    "posicion": 9,
-    "coeficiente": -0.17724083364009857
+    "variable": "PrevFireMask",
+    "posicion": 8,
+    "coeficiente": 0.19745919898267214
   },
   {
     "variable": "erc",
     "posicion": 8,
-    "coeficiente": 0.17464177310466766
+    "coeficiente": 0.19403044854745746
+  },
+  {
+    "variable": "elevation",
+    "posicion": 9,
+    "coeficiente": -0.18427666652630842
   },
   {
     "variable": "elevation",
     "posicion": 4,
-    "coeficiente": 0.17429250478744507
-  },
-  {
-    "variable": "PrevFireMask",
-    "posicion": 8,
-    "coeficiente": 0.16933108866214752
+    "coeficiente": 0.18282295494043635
   },
   {
     "variable": "PrevFireMask",
     "posicion": 2,
-    "coeficiente": 0.1552993357181549
+    "coeficiente": 0.17957097582109302
   },
   {
-    "variable": "tmmn",
-    "posicion": 9,
-    "coeficiente": 0.14722402393817902
+    "variable": "tmmx",
+    "posicion": 8,
+    "coeficiente": -0.16789110385580114
   },
   {
     "variable": "erc",
-    "posicion": 6,
-    "coeficiente": 0.13506059348583221
+    "posicion": 2,
+    "coeficiente": -0.1643419336554911
   },
   {
     "variable": "tmmx",
     "posicion": 7,
-    "coeficiente": -0.1348818689584732
+    "coeficiente": -0.14851717464337505
   },
   {
     "variable": "erc",
-    "posicion": 2,
-    "coeficiente": -0.13238239288330078
+    "posicion": 6,
+    "coeficiente": 0.14837034983991187
   },
   {
     "variable": "tmmx",
-    "posicion": 8,
-    "coeficiente": -0.12273939698934555
+    "posicion": 3,
+    "coeficiente": 0.14275552017474358
   }
 ]

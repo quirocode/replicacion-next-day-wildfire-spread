@@ -47,9 +47,9 @@ Conjunto de prueba (1 689 muestras). Las métricas están en porcentaje y en el 
 
 | Modelo | Artículo (Tabla II) | Replicación: muestra completa 64 × 64 km | Replicación: recortes 32 × 32 km |
 | --- | --- | --- | --- |
-| Autoencoder convolucional | 28,4 / 33,6 / 43,1 | 25,1 / 30,0 / 42,7 | **28,4 / 33,7 / 42,2** |
-| Random forest | 22,5 / 26,3 / 46,9 | 21,7 / 28,9 / 44,0 | — |
-| Regresión logística | 19,8 / 32,5 / 35,3 | 19,9 / 36,4 / 28,3 | — |
+| Autoencoder convolucional | 28,4 / 33,6 / 43,1 | 24,9 / 29,9 / 42,3 | **28,1 / 33,7 / 41,9** |
+| Random forest | 22,5 / 26,3 / 46,9 | 21,4 / 27,1 / 45,9 | — |
+| Regresión logística | 19,8 / 32,5 / 35,3 | 20,0 / 36,4 / 28,4 | — |
 | Persistencia | 11,5 / 35,7 / 27,3 | **11,5 / 35,7 / 27,3** | 14,3 / 40,1 / 26,4 |
 
 ![Comparación con la Tabla II](resultados/fig4_comparacion_tabla2.png)
@@ -58,20 +58,20 @@ Conjunto de prueba (1 689 muestras). Las métricas están en porcentaje y en el 
 
 - **Se reproduce el orden de los modelos:** red neuronal > random forest > regresión logística > persistencia.
 - **El protocolo de evaluación queda validado.** La persistencia no se entrena, así que su resultado depende solo de los datos y de cómo se mide. Reproduce al decimal la Tabla II y las tres filas de persistencia de la Tabla III (2, 4 y 8 km).
-- **El valor de la red depende de los píxeles evaluados.** Sobre recortes de 32 × 32 km da 28,4, igual que el artículo. Sobre la muestra completa de 64 × 64 km, que es el protocolo con el que coinciden los modelos base, da 25,1. El artículo no indica sobre qué región evaluó la red. La hipótesis de que usó recortes para la red y la muestra completa para los modelos base es consistente con los números y con el código publicado, pero no está confirmada.
-- **La máscara de fuego del día *t* es la variable decisiva.** Al quitarla, el AUC PR de la red cae a 6,9 (artículo: 6,8) y el de la regresión logística a 3,1 (artículo: 3,1). En el random forest, sus nueve posiciones de la vecindad ocupan los nueve primeros puestos de importancia de Gini, igual que en la Tabla VI.
+- **El valor de la red depende de los píxeles evaluados.** Sobre recortes de 32 × 32 km da 28,1, a 0,3 puntos del artículo (28,4). Sobre la muestra completa de 64 × 64 km, que es el protocolo con el que coinciden los modelos base, da 24,9. El artículo no indica sobre qué región evaluó la red. La hipótesis de que usó recortes para la red y la muestra completa para los modelos base es consistente con los números y con el código publicado, pero no está confirmada.
+- **La máscara de fuego del día *t* es la variable decisiva.** Al quitarla, el AUC PR de la red cae a 6,9 (artículo: 6,8) y el de la regresión logística a 3,2 (artículo: 3,1). En el random forest, sus nueve posiciones de la vecindad ocupan los nueve primeros puestos de importancia de Gini, igual que en la Tabla VI, y en conjunto pesan 0,62 (artículo: 0,61).
 
 ### Análisis de variables
 
 | Experimento | Artículo | Replicación (recortes 32 × 32 km) |
 | --- | --- | --- |
-| Red sin la máscara de fuego previa (Tabla IV) | 6,8 / 4,6 / 0,2 | 6,9 / 20,4 / 0,2 |
-| Red solo con la máscara de fuego previa (Sección V-B) | 22,9 / 29,2 / 49,6 | 21,3 / 25,8 / 52,0 |
+| Red sin la máscara de fuego previa (Tabla IV) | 6,8 / 4,6 / 0,2 | 6,9 / 15,3 / 0,3 |
+| Red solo con la máscara de fuego previa (Sección V-B) | 22,9 / 29,2 / 49,6 | 21,3 / 29,6 / 47,7 |
 
 | Experimento (regresión logística, Tabla VIII) | Artículo (AUC PR) | Replicación (AUC PR) |
 | --- | --- | --- |
-| Sin la máscara de fuego previa | 3,1 | 3,1 |
-| Sin cualquier otra variable | 19,6 – 20,0 | 19,8 – 20,0 |
+| Sin la máscara de fuego previa | 3,1 | 3,2 |
+| Sin cualquier otra variable | 19,6 – 20,0 | 19,7 – 20,0 |
 
 ### Predicciones de la red
 
@@ -191,10 +191,10 @@ La arquitectura de la red se detalla en [`arquitectura/arquitectura_modelo.png`]
 ├── paso3_modelos_base.py            modelos base, coeficientes, ablación e importancia de Gini
 ├── paso4_ablacion_red.py            ablación de la red
 ├── paso5_comparar_con_articulo.py   tablas y figuras comparativas
-├── extra_tasa_aprendizaje.py        experimento adicional (tasa de aprendizaje 10× mayor)
+├── extra_tasa_aprendizaje.py        experimento opcional (tasa de aprendizaje 10× mayor); no forma parte de los resultados
 ├── arquitectura/                    diagramas del prototipo y de la red
 ├── herramientas/                    scripts que generan el notebook y los diagramas
-└── resultados/                      métricas (JSON), figuras, pesos entrenados y registros de ejecución
+└── resultados/                      métricas (JSON), figuras y pesos entrenados (salida de la ejecución en Kaggle)
 ```
 
 Cada constante de `src/config.py` indica su origen: `[ART]` texto del artículo, `[COD]` código de los autores y `[REP]` decisión de esta replicación.
@@ -206,7 +206,7 @@ Cada constante de `src/config.py` indica su origen: `[ART]` texto del artículo,
 ### Opción 1: Kaggle (recomendada)
 
 1. Crea un notebook nuevo e importa `replicacion_next_day_wildfire_spread.ipynb` (*File → Import Notebook*).
-2. *Add Input* → busca `next-day-wildfire-spread` (autor `fantineh`) → *Add*.
+2. *Add Input* → escribe `next day wildfire spread`, filtra por **Datasets** y elige el de `fantineh` → *Add*.
 3. *Settings → Accelerator →* GPU.
 4. *Run All*.
 
@@ -238,12 +238,12 @@ python paso5_comparar_con_articulo.py
 | Presupuesto | Épocas × pasos | Uso |
 | --- | --- | --- |
 | `prueba` | 2 × 20 | Comprobar que el flujo corre de principio a fin (~5 min). Sus métricas no son representativas y se guardan en `resultados_prueba/` |
-| `prototipo` | 60 × 468 = 28 080 | Configuración de los resultados reportados (~1 h por entrenamiento en CPU) |
+| `prototipo` | 60 × 468 = 28 080 | Configuración de los resultados reportados (~12 min por red con GPU en Kaggle; ~1 h en CPU) |
 | `largo` | 300 × 468 = 140 400 | Entrenamiento más cercano al del artículo, recomendado con GPU |
 
 Un entrenamiento interrumpido se reanuda desde la última época guardada. Para empezar de cero, borra `resultados/modelos/` y los archivos `resultados/historial_*.json`.
 
-**Entorno usado para los resultados:** Python 3.13, TensorFlow 2.21, Keras 3.15, Scikit-learn 1.9 y NumPy 2.5, en una CPU de 4 núcleos sin GPU.
+**Entorno usado para los resultados:** Kaggle Notebooks con GPU NVIDIA T4 y el presupuesto `prototipo`. Los archivos de `resultados/` son la salida de esa ejecución.
 
 ---
 
@@ -253,13 +253,15 @@ Un entrenamiento interrumpido se reanuda desde la última época guardada. Para 
 | --- | --- | --- |
 | Región evaluada para la red | No especificada | Se reportan ambas: muestra completa y recortes de 32 × 32 km |
 | Pasos de entrenamiento | 1 000 000 (1000 épocas × 1000 pasos) | 28 080 (2,8 %) |
-| Hardware | 4 GPU NVIDIA V100 | CPU de 4 núcleos |
+| Hardware | 4 GPU NVIDIA V100 | 1 GPU NVIDIA T4 (Kaggle) |
 | Tamaño de lote | Búsqueda entre 32 y 256 | 32 |
 | Búsqueda de hiperparámetros | En grilla | No se repite; se usan los valores finales publicados |
 | Script de entrenamiento | No publicado | Reconstruido a partir del texto y del código disponible |
 | Semilla | No reportada | 123, con una sola corrida |
 
-La curva de validación se estabiliza cerca de la época 20. Un experimento adicional con una tasa de aprendizaje 10 veces mayor llegó a un resultado similar (28,0 sobre recortes), así que el menor número de pasos no parece ser la principal fuente de diferencia.
+La curva de validación sube rápido hasta cerca de la época 20 y después casi no mejora (la mejor época fue la 49, con 21,5 de AUC PR en validación). Por eso, el menor número de pasos no parece ser la principal fuente de diferencia.
+
+![Curvas de entrenamiento](resultados/fig2_curvas_entrenamiento.png)
 
 ---
 

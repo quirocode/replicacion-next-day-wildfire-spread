@@ -114,8 +114,8 @@ lineas += ["", "Los mismos modelos medidos sobre recortes aleatorios de 32 x 32 
 lineas += [
     "",
     f"- Red neuronal: {miles(historial['pasos_totales'])} pasos de entrenamiento "
-    f"({historial['epocas']} épocas x {historial['pasos_por_epoca']} pasos "
-    "en CPU); el artículo usó 1 000 000 de pasos en 4 GPU V100.",
+    f"({historial['epocas']} épocas x {historial['pasos_por_epoca']} pasos); "
+    "el artículo usó 1 000 000 de pasos en 4 GPU V100.",
     f"- Mejor época según validación: {historial['mejor_epoca']} "
     f"(AUC PR de validación {num(historial['mejor_val_auc_pr'])} %).",
     f"- Variación del AUC PR de la red entre tres juegos de recortes distintos: "

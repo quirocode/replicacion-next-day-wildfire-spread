@@ -1,83 +1,83 @@
 {
   "elevation": {
-    "auc_pr": 19.879071414470673,
-    "precision": 36.44696841098131,
-    "recall": 28.42494192973799,
+    "auc_pr": 19.926461577415466,
+    "precision": 36.387700452460834,
+    "recall": 28.45623367714138,
     "pixeles_validos": 6313864,
     "pixeles_con_fuego": 83089
   },
   "pdsi": {
-    "auc_pr": 19.78926658630371,
-    "precision": 36.605685954562574,
-    "recall": 28.079529179554452,
+    "auc_pr": 19.76165920495987,
+    "precision": 36.791718926127615,
+    "recall": 27.890575166387848,
     "pixeles_validos": 6313864,
     "pixeles_con_fuego": 83089
   },
   "NDVI": {
-    "auc_pr": 19.911876320838928,
-    "precision": 36.61221645893009,
-    "recall": 28.458640734633946,
+    "auc_pr": 19.9404314160347,
+    "precision": 36.540830151496486,
+    "recall": 28.56455126430695,
     "pixeles_validos": 6313864,
     "pixeles_con_fuego": 83089
   },
   "pr": {
-    "auc_pr": 19.908995926380157,
-    "precision": 36.31815149493602,
-    "recall": 28.829327588489452,
+    "auc_pr": 19.89310085773468,
+    "precision": 36.61805587910978,
+    "recall": 28.37680077988663,
     "pixeles_validos": 6313864,
     "pixeles_con_fuego": 83089
   },
   "sph": {
-    "auc_pr": 19.941747188568115,
-    "precision": 36.45412801627169,
-    "recall": 28.473083079589358,
+    "auc_pr": 19.8915958404541,
+    "precision": 36.38687360333058,
+    "recall": 28.61148888541203,
     "pixeles_validos": 6313864,
     "pixeles_con_fuego": 83089
   },
   "th": {
-    "auc_pr": 19.82319802045822,
-    "precision": 36.2122391659416,
-    "recall": 28.55131244809782,
+    "auc_pr": 19.836942851543427,
+    "precision": 36.22497470644143,
+    "recall": 28.440587803439687,
     "pixeles_validos": 6313864,
     "pixeles_con_fuego": 83089
   },
   "tmmn": {
-    "auc_pr": 19.863903522491455,
-    "precision": 36.25231338679827,
-    "recall": 28.290146710154175,
+    "auc_pr": 19.749774038791656,
+    "precision": 36.18834426862215,
+    "recall": 28.211917341645705,
     "pixeles_validos": 6313864,
     "pixeles_con_fuego": 83089
   },
   "tmmx": {
-    "auc_pr": 19.80765461921692,
-    "precision": 36.50843271800803,
-    "recall": 28.110820926957842,
+    "auc_pr": 19.754093885421753,
+    "precision": 36.36687031165417,
+    "recall": 28.29857141137816,
     "pixeles_validos": 6313864,
     "pixeles_con_fuego": 83089
   },
   "vs": {
-    "auc_pr": 20.017527043819427,
-    "precision": 36.33452227365865,
-    "recall": 28.81127465729519,
+    "auc_pr": 20.019042491912842,
+    "precision": 36.34323492395639,
+    "recall": 28.846176990937426,
     "pixeles_validos": 6313864,
     "pixeles_con_fuego": 83089
   },
   "erc": {
-    "auc_pr": 19.760969281196594,
-    "precision": 36.42330794476438,
-    "recall": 28.31662434257242,
+    "auc_pr": 19.756866991519928,
+    "precision": 36.34028106983928,
+    "recall": 28.600657126695474,
     "pixeles_validos": 6313864,
     "pixeles_con_fuego": 83089
   },
   "population": {
-    "auc_pr": 19.887705147266388,
-    "precision": 36.43676928027459,
-    "recall": 28.618710057889736,
+    "auc_pr": 19.889596104621887,
+    "precision": 36.404504655521855,
+    "recall": 28.751098219980985,
     "pixeles_validos": 6313864,
     "pixeles_con_fuego": 83089
   },
   "PrevFireMask": {
-    "auc_pr": 3.1172510236501694,
+    "auc_pr": 3.153586760163307,
     "precision": 0.0,
     "recall": 0.0,
     "pixeles_validos": 6313864,
